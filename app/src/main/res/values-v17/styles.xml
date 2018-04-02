@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MenuOptions_ButtonStyle">
+
+        <item name="android:textColor">#ffff</item>
+
+        <item name="android:textSize">25dp</item>
+
+        <item name="android:textAlignment">center</item>
+
+        <item name="android:fontFamily">sans-serif-smallcaps</item>
+
+        <item name="android:layout_width">120dp</item>
+
+        <item name="android:layout_height">80dp</item>
+
+        <item name="android:background">@color/colorPrimary</item>
+
+    </style>
+</resources>

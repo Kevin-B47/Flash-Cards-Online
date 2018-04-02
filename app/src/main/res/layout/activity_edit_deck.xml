@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/deck_edit_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.example.android.flashcards.EditDeckActivity">
+
+    <LinearLayout
+        android:id="@+id/deckinfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:background="@color/whitebackground"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/deckNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="deckname"
+            android:textColor="@color/textcolor"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/deckDescEditTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1.5"
+            android:gravity="top"
+            android:text="deckdesc"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/textcolor"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/editDeckListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whitebackground"
+        android:layout_weight="10">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/NewCardBtn"
+            style="@style/PlaySolo_ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:onClick="onNewCard"
+            android:text="NEW CARD"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FEAE1F</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#1c1c1c</color>
+    <color name ="colormenu">#5767cc</color>
+    <color name = "deckborder">#F5FBF8</color>
+    <color name = "whitebackground">#fafafa</color>
+    <color name ="gradcolor">#FEAE1F</color>
+    <color name ="gradcolor2">#c87800</color>
+    <color name ="textcolor">#212121</color>
+    <color name ="buttcolor">#c3212121</color>
+    <color name ="correct">#2ECC71</color>
+</resources>

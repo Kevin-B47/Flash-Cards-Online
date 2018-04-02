@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.flashcards.MenuActivity">
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_height = "wrap_content"
+        android:layout_width = "match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:srcCompat="@android:drawable/btn_star" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "Pts"
+                android:textColor="@android:color/black"
+                android:layout_margin="8dp"
+                android:textSize = "24sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "#/#"
+                android:textColor="@android:color/black"
+                android:layout_margin="8dp"
+                android:textSize = "24sp"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:srcCompat="@android:drawable/btn_star"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="(Either side of the flash card)"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/Answer_Button"
+        android:layout_width = "140dp"
+        android:layout_height = "40dp"
+        android:layout_margin="20dp"
+        android:text="Answer"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"/>
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:layout_height = "wrap_content"
+        android:layout_width = "match_parent">
+
+        <Button
+            android:id="@+id/Quit_Button"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_blue_dark"
+            android:onClick="onQuitClicked"
+            android:text="Quit"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+</LinearLayout>

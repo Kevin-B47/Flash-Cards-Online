@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/soloplaylayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whitebackground"
+    android:orientation="vertical"
+    tools:context="com.example.android.flashcards.SoloPlayActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/numofCards"
+            style="@style/ReturnToMenu_Quit_ButtonStyle"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="#/#"
+            android:textColor="@color/whitebackground"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/deckNameView"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/Menu_Button"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="Deck Name"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/numCorrect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/numofCards"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="0/0 Correct"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/Menu_Button"
+            style="@style/ReturnToMenu_Quit_ButtonStyle"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:onClick="onMenuClicked"
+            android:text="Menu"
+            android:textColor="@color/whitebackground" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/cardViewFront"
+            style="@style/BaseTheme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/menu_border"
+            android:gravity="center_vertical"
+            android:text="font"
+            android:textAlignment="center"
+            android:textColor="@color/textcolor"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/cardViewBack"
+            style="@style/BaseTheme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/menu_border"
+            android:gravity="center_vertical"
+            android:text="back"
+            android:textAlignment="center"
+            android:textColor="@color/textcolor"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/answer_butt"
+            style="@style/ReturnToMenu_Quit_ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_margin="8dp"
+            android:layout_weight="1.5"
+            android:onClick="AttemptedAnswer"
+            android:text="Answer"
+            android:textColor="@color/whitebackground" />
+
+    </LinearLayout>
+
+</LinearLayout>

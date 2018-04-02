@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ReturnToMenu_Quit_ButtonStyle">
+
+        <item name="android:textColor">#ffff</item>
+
+        <item name="android:textSize">25dp</item>
+
+        <item name="android:layout_width">100dp</item>
+        >
+        <item name="android:layout_height">50dp</item>
+
+        <item name="android:fontFamily">sans-serif-smallcaps</item>
+
+        <item name="android:background">@color/colorPrimary</item>
+
+    </style>
+</resources>

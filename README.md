@@ -1,7 +1,9 @@
 # Flash-Cards-Online
-An open source flashcards app that was made for a COM class
 
+## Ceated by Kevin Block
 
-* Created by Kevin Block
+An open source flashcards app that was made for a COM class. Offers a full login syststem and deck uploading. Swiping to the left will delete a deck / card. Uploading to the right will upload the card.
 
-** API Version 15 minimum
+No email auth is required. Feel free to sign up with emails like hello@hello.com
+
+Minimum API level is 15

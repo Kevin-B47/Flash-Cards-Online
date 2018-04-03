@@ -39,7 +39,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -47,8 +46,8 @@ public class DecksActivity extends AppCompatActivity {
     //index of the currently highlighted list item
     private RecyclerView.Adapter recycleAdapter;
     private int focused = 0;
-    public ArrayList<Deck> decks;
-    public boolean isSelecting = false;
+    private ArrayList<Deck> decks;
+    private boolean isSelecting = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +99,7 @@ public class DecksActivity extends AppCompatActivity {
         this.loadDecks();
     }
 
-    public void loadDecks(){
+    private void loadDecks(){
         decks = Deck.LoadAllDecks(this);
         this.RefreshAdapter();
     }
@@ -346,16 +345,9 @@ public class DecksActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.R.id.home && isSelecting) {
-            Intent intent = new Intent(this,MenuActivity.class);
-            startActivity(intent);
-            finish();
-        }else if(item.getItemId() == android.R.id.home){
-            NavUtils.navigateUpFromSameTask(this);
-            return true;
-        }
-
-
+        Intent intent = new Intent(this,MenuActivity.class);
+        startActivity(intent);
+        finish();
         return super.onOptionsItemSelected(item);
     }
 

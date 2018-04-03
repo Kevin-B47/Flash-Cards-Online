@@ -25,14 +25,14 @@ public class OnlineDeckAdapter extends RecyclerView.Adapter<OnlineDeckAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        public TextView numOfCards;
-        public TextView deckName;
-        public TextView author;
-        public int serverid;
-        public View layout;
+        TextView numOfCards;
+        TextView deckName;
+        TextView author;
+        int serverid;
+        View layout;
         private RecycleCallback callbackListener;
 
-        public ViewHolder(View v, RecycleCallback listener) {
+        ViewHolder(View v, RecycleCallback listener) {
             super(v);
             layout = v;
             numOfCards = v.findViewById(R.id.deck_amount);
@@ -84,8 +84,7 @@ public class OnlineDeckAdapter extends RecyclerView.Adapter<OnlineDeckAdapter.Vi
             }
         };
 
-        ViewHolder vh = new ViewHolder(v,callback);
-        return vh;
+        return new ViewHolder(v,callback);
     }
 
     public void onDeckAdded(){

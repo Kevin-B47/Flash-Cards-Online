@@ -1,7 +1,6 @@
 package com.example.android.flashcards.classes;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,16 +24,16 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        public TextView numOfCards;
-        public TextView deckname;
-        public TextView deckdesc;
-        public int serverid;
-        public int clientid;
-        public String realfilename;
-        public View layout;
+        TextView numOfCards;
+        TextView deckname;
+        TextView deckdesc;
+        int serverid;
+        int clientid;
+        String realfilename;
+        View layout;
         private RecycleCallback callbackListener;
 
-        public ViewHolder(View v, RecycleCallback listener) {
+        ViewHolder(View v, RecycleCallback listener) {
             super(v);
             layout = v;
             numOfCards = v.findViewById(R.id.deckcards);
@@ -75,8 +74,7 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.ViewHolder> {
             }
         };
 
-        ViewHolder vh = new ViewHolder(v,callback);
-        return vh;
+        return new ViewHolder(v,callback);
     }
 
     public void addDeck(Deck d){

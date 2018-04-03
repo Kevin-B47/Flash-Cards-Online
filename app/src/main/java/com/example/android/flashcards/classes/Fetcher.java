@@ -1,7 +1,5 @@
 package com.example.android.flashcards.classes;
 
-import android.util.Log;
-
 /**
  * Created by Kevin on 2/14/2018.
  */

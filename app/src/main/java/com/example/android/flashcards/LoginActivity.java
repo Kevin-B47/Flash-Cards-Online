@@ -21,9 +21,6 @@ import android.widget.Toast;
 import com.example.android.flashcards.classes.AuthedUser;
 import com.example.android.flashcards.classes.User;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-
 
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
@@ -35,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private LinearLayout regLayout;
     private LinearLayout loginLayout;
 
-    public void HideKeyboard(){
+    private void HideKeyboard(){
         try {
             InputMethodManager keyboard = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             keyboard.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
@@ -85,11 +82,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
 
         if (!token.equals("-1") && !email.equals("-1")){
-            try {
-                User.ValidateToken(this, email, token);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            User.ValidateToken(this, email, token);
         }
 
         Button loginOfflineButt = findViewById(R.id.loginoffline);
@@ -116,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     }
 
-    public void LoginNoConnection(){
+    private void LoginNoConnection(){
         Toast.makeText(this,"Logging in locally",Toast.LENGTH_SHORT).show();
         User.LoggedIn = new AuthedUser();
         startActivity(new Intent(this, MenuActivity.class));
@@ -179,7 +172,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
-    public void LoginUserView(){
+    private void LoginUserView(){
         if (regLayout != null && loginLayout != null){
             this.regLayout.setVisibility(View.INVISIBLE);
             this.loginLayout.setVisibility(View.VISIBLE);

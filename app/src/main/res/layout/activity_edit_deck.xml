@@ -65,7 +65,6 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/NewCardBtn"
             style="@style/PlaySolo_ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

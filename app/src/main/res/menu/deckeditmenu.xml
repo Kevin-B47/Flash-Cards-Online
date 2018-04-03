@@ -6,7 +6,6 @@
 
 
     <item
-        android:id="@+id/action_notification1"
         android:icon="@drawable/deckmenu"
         android:title="action_notification"
         app:showAsAction="always">

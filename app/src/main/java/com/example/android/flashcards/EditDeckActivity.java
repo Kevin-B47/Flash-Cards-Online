@@ -8,7 +8,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -37,7 +36,7 @@ import com.example.android.flashcards.classes.Deck;
 //card numbers should probably start with 1 for our users
 public class EditDeckActivity extends AppCompatActivity {
 
-    public Deck loadedDeck;
+    private Deck loadedDeck;
 
     private RecyclerView.Adapter recycleAdapter;
 
@@ -132,7 +131,7 @@ public class EditDeckActivity extends AppCompatActivity {
 
     }
 
-    public void onDeckInfoEdited(String name, String desc){
+    private void onDeckInfoEdited(String name, String desc){
         if (loadedDeck != null){
             loadedDeck.setName(name);
             loadedDeck.SetDeckDesc(desc);

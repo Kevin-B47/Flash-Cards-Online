@@ -64,7 +64,7 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    public void onPlaySoloClicked(View v){
+    private void onPlaySoloClicked(View v){
 
         int deckCount = Deck.GetValidDeckCount(this);
 
@@ -80,32 +80,22 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
-    public void onPlayMulitplayerClicked(View v){
-        Intent playMulti = new Intent(getApplicationContext(), MultiplayerActivity.class);
-        startActivity(playMulti);
-    }
-
-    public void onProfileClicked(View v){
+    private void onProfileClicked(View v){
         Intent profile = new Intent(getApplicationContext(), ProfileActivity.class);
         startActivity(profile);
     }
 
-    public void onSettingsClicked(View v){
-        Intent settings = new Intent(getApplicationContext(), SettingsActivity.class);
-        startActivity(settings);
-    }
-
-    public void onDecksClicked(View v){
+    private void onDecksClicked(View v){
         Intent decks = new Intent(getApplicationContext(), DecksActivity.class);
         startActivity(decks);
     }
 
-    public void onDownloadClicked(View v){
+    private void onDownloadClicked(View v){
         Intent decks = new Intent(getApplicationContext(), DeckDownload.class);
         startActivity(decks);
     }
 
-    public void onLogout(View v){
+    private void onLogout(View v){
 
         String loggedInEmail = User.LoggedIn.GetEmail();
 

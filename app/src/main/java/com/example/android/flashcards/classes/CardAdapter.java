@@ -23,12 +23,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        public TextView question;
-        public TextView cardnumber;
-        public View layout;
+        TextView question;
+        TextView cardnumber;
+        View layout;
         private RecycleCallback callbackListener;
 
-        public ViewHolder(View v, RecycleCallback listener) {
+        ViewHolder(View v, RecycleCallback listener) {
             super(v);
             layout = v;
             cardnumber = v.findViewById(R.id.cardnum);
@@ -59,8 +59,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         };
 
         View v = inflater.inflate(R.layout.cardlayout,parent,false);
-        ViewHolder vh = new ViewHolder(v,callback);
-        return vh;
+        return new ViewHolder(v,callback);
     }
 
     @Override

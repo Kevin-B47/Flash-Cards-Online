@@ -25,7 +25,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +32,7 @@ import java.util.List;
 public class DeckDownload extends AppCompatActivity {
     private RecyclerView.Adapter recycleAdapter;
 
-    List<OnlineDeck> decksToShow = new ArrayList<>();
+    private List<OnlineDeck> decksToShow = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

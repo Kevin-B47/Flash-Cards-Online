@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -20,7 +19,6 @@ import com.example.android.flashcards.interfaces.VolleyCallback;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
@@ -192,7 +190,7 @@ public class User {
         });
     }
 
-    public static void ValidateToken(final Context context, String email, String token) throws IOException {
+    public static void ValidateToken(final Context context, String email, String token) {
         SimpleREST api = new SimpleREST(context);
 
         HashMap<String,String> arr = new HashMap<>();
@@ -227,7 +225,7 @@ public class User {
         });
     }
 
-    public static void SaveLoginNoConnection(Context context, String email){
+    private static void SaveLoginNoConnection(Context context, String email){
         SharedPreferences flashData = context.getSharedPreferences("flashdata",Context.MODE_PRIVATE);
         SharedPreferences.Editor editData = flashData.edit();
         editData.putString("lastlogin",email);
@@ -248,7 +246,7 @@ public class User {
         LoggedIn = new AuthedUser(email,displayName,token,-1,serverid);
     }
 
-    public static boolean isDataKindaOkay(JSONObject obj){
+    private static boolean isDataKindaOkay(JSONObject obj){
         return obj.has("displayname") && obj.has("serverid") && obj.has("token") && obj.has("email");
     }
 
@@ -266,7 +264,7 @@ public class User {
     }
 
     //TODO:: Mover over to SQL as storing like this seems very limited and robust
-    public static void SaveLogin(Context context,String email, String token){
+    private static void SaveLogin(Context context, String email, String token){
         SharedPreferences flashData = context.getSharedPreferences("flashdata",Context.MODE_PRIVATE);
         SharedPreferences.Editor editData = flashData.edit();
         editData.putString(email,token);

@@ -52,7 +52,8 @@
             android:text="0/0 Correct"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true" />
 
         <Button
             android:id="@+id/Menu_Button"
@@ -60,11 +61,12 @@
             android:layout_width="70dp"
             android:layout_height="35dp"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_marginRight="8dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
             android:onClick="onMenuClicked"
-            android:text="Menu"
+            android:text="@string/menu"
             android:textColor="@color/whitebackground" />
 
     </RelativeLayout>
@@ -108,11 +110,10 @@
             style="@style/ReturnToMenu_Quit_ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
             android:layout_margin="8dp"
             android:layout_weight="1.5"
             android:onClick="AttemptedAnswer"
-            android:text="Answer"
+            android:text="@string/card_answer"
             android:textColor="@color/whitebackground" />
 
     </LinearLayout>

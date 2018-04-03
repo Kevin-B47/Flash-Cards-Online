@@ -30,13 +30,13 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        public TextView question;
-        public TextView answer;
-        public TextView cardnumber;
-        public View layout;
+        TextView question;
+        TextView answer;
+        TextView cardnumber;
+        View layout;
         private RecycleCallback callbackListener;
 
-        public ViewHolder(View v, RecycleCallback listener) {
+        ViewHolder(View v, RecycleCallback listener) {
             super(v);
             layout = v;
             cardnumber = v.findViewById(R.id.cardnum);
@@ -107,8 +107,7 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
         };
 
         View v = inflater.inflate(R.layout.flashlayout,parent,false);
-        ViewHolder vh = new ViewHolder(v,callback);
-        return vh;
+        return new ViewHolder(v,callback);
     }
 
     @Override

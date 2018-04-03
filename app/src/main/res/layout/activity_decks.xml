@@ -9,7 +9,6 @@
     tools:context="com.example.android.flashcards.DecksActivity">
 
     <RelativeLayout
-        android:id="@+id/createDeckView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
@@ -21,17 +20,17 @@
             android:id="@+id/selectDeckTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:gravity="bottom"
-            android:text="Select a Deck!"
+            android:paddingTop="3dp"
+            android:text="@string/deck_deck_select"
             android:textAlignment="center"
             android:textColor="@color/textcolor"
             android:textSize="36sp"
-            android:paddingTop="3dp"
             android:textStyle="bold"
-            android:visibility="visible"
-            android:layout_alignParentLeft="true" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/plusbutt"
@@ -63,26 +62,25 @@
                 android:id="@+id/newdecktxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:gravity="bottom"
-                android:text="Create Deck"
+                android:text="@string/deck_deck_create"
                 android:textColor="@color/textcolor"
-                android:textSize="24sp"
-                android:layout_alignParentLeft="true" />
+                android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/newdecktxt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/newdecktxt"
                 android:gravity="start"
-                android:text="Create a deck to bring into Solo Play!"
+                android:text="@string/deck_deck_desc"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="12sp"
-                android:layout_alignParentLeft="true" />
+                android:textSize="12sp" />
         </RelativeLayout>
 
     </RelativeLayout>

@@ -7,8 +7,8 @@ package com.example.android.flashcards.classes;
 
 public class Card {
 
-    public String front;
-    public String back;
+    private String front;
+    private String back;
 
     public Card(String sFront, String sBack){
         front = sFront;
@@ -34,11 +34,5 @@ public class Card {
 
     public void setBack(String s){
         back = s;
-    }
-
-    //Return card as a string for saving
-    public String saveString() {
-        String saveString = front + ":" + back;
-        return saveString;
     }
 }

@@ -30,23 +30,21 @@
         app:layout_constraintVertical_bias="0.437">
 
         <TextView
-            android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Flash Cards"
+            android:text="@string/app_name"
             android:textColor="@color/textcolor"
             android:textSize="64sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="An app that keeps you guessing"
+            android:text="@string/app_desc"
             android:textColor="@color/textcolor"
             android:textSize="24sp"
             android:textStyle="italic" />
@@ -95,13 +93,11 @@
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:onClick="attemptLogin"
             android:text="@string/action_sign_in"
             tools:layout_editor_absoluteX="87dp"
             tools:layout_editor_absoluteY="218dp" />
 
         <Button
-            android:id="@+id/register"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="38dp"
@@ -173,7 +169,6 @@
             tools:layout_editor_absoluteY="96dp" />
 
         <Button
-            android:id="@+id/createaccount"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="38dp"
@@ -200,13 +195,12 @@
         tools:visibility="invisible" />
 
     <TextView
-        android:id="@+id/offlineTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Login to access online featues!"
+        android:text="@string/offline_txt"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

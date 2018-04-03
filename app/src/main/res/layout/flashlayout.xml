@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainBox"
     android:layout_width="match_parent"
     android:layout_height="50dp">
 
@@ -20,19 +19,17 @@
             android:textSize="30sp" />
 
         <LinearLayout
-            android:id="@+id/left"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/questionLbl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="Question"
                 android:paddingTop="4dp"
+                android:text="@string/card_question"
                 android:textAlignment="center"
                 android:textSize="12sp"
                 android:textStyle="bold|italic" />
@@ -44,24 +41,22 @@
                 android:layout_weight="1"
                 android:text="Is this sick?"
                 android:textAlignment="center"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/right"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/answerLbl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="Answer"
                 android:paddingTop="4dp"
+                android:text="@string/card_answer"
                 android:textAlignment="center"
                 android:textSize="12sp"
                 android:textStyle="bold|italic" />
@@ -73,7 +68,7 @@
                 android:layout_weight="1"
                 android:text="Debatable"
                 android:textAlignment="center"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,7 +1,6 @@
 package com.example.android.flashcards.classes;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -74,10 +73,8 @@ public class SimpleREST {
         // I think this works like this: If I send 500 API requests in .1 seconds it will handle all of them from the time I sent them
         // Although I am not too sure
         // This can also be a Simpleton object as you don't have to make a new requestqueue per request (as it voids the whole point of a requestQUEUE)
-        if (this.context != null){
+        if (this.context != null) {
             Volley.newRequestQueue(this.context.getApplicationContext()).add(req);
-        }else {
-            //Log.d("ERROR CONTEXT","Context was null??");
         }
     }
 
@@ -119,10 +116,8 @@ public class SimpleREST {
             }
         };
 
-        if (this.context != null){
+        if (this.context != null) {
             Volley.newRequestQueue(this.context.getApplicationContext()).add(req);
-        }else {
-            //Log.d("ERROR CONTEXT","Context was null??");
         }
     }
 

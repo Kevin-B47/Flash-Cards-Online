@@ -3,7 +3,6 @@ package com.example.android.flashcards.classes;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,11 +63,11 @@ public class Deck {
         this.serverid = serverid;
     }
 
-    public static String GetGoodDeckName(String name){
+    private static String GetGoodDeckName(String name){
         return name.replaceAll("[\\s;\\/:*?\"<>|&']","_");
     }
 
-    public static boolean IsValidJSON(String json){
+    private static boolean IsValidJSON(String json){
         try {
             JSONObject obj = new JSONObject(json);
             return true;
@@ -89,8 +88,7 @@ public class Deck {
             return new Deck();
         }
 
-        Deck deck = Deck.JSONToDeck(c,json);
-        return deck;
+        return Deck.JSONToDeck(c,json);
     }
 
     public static Deck LoadDeckByFileName(Context c, String deckName) {
@@ -100,8 +98,7 @@ public class Deck {
             return new Deck();
         }
 
-        Deck deck = Deck.JSONToDeck(c,json);
-        return deck;
+        return Deck.JSONToDeck(c,json);
     }
 
     public static boolean DoesDeckExist(Context c,String name){
@@ -174,7 +171,7 @@ public class Deck {
         }
     }
 
-    public void addCard(Card c){
+    private void addCard(Card c){
         cards.add(c);
     }
 
@@ -183,8 +180,11 @@ public class Deck {
     }
 
     public Card getCard(int i){
-        Card ret = cards.get(i);
-        return ret;
+        try{
+            return cards.get(i);
+        }catch(IndexOutOfBoundsException e){
+            return new Card();
+        }
     }
 
     public int getSize(){
@@ -194,8 +194,7 @@ public class Deck {
     public boolean SetNewData(String name, String desc, Context c){
         this.deckname = name;
         this.deckdesc = desc;
-        boolean wasGood = this.save(c);
-        return wasGood;
+        return this.save(c);
     }
 
     public void setName(String s) {
@@ -532,7 +531,7 @@ public class Deck {
         return this.serverid;
     }
 
-    public void SetClientID(int id){
+    private void SetClientID(int id){
         this.clientid = id;
     }
 

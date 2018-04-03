@@ -3,7 +3,6 @@ package com.example.android.flashcards.db;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 /**
  * Created by Kevin on 2/15/2018.
@@ -21,11 +20,9 @@ public class UserDBHelper extends DB {
     private final static String c_email = "email";
     private final static String c_token = "token";
 
-    public Context context;
-
     public UserDBHelper(Context context ) {
         super(context);
-        this.context = context;
+        Context context1 = context;
     }
 
     private final static String createTable = "CREATE TABLE IF NOT EXISTS " + tbl_name + "("

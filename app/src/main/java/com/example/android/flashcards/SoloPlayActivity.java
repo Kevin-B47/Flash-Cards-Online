@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -50,7 +49,6 @@ public class SoloPlayActivity extends AppCompatActivity {
     private boolean isBlurred = true;
     private long cooldown = 0;
     private int correct = 0;
-    private boolean wasFinished = false;
 
     private AlertDialog currentBuilder;
 
@@ -133,17 +131,18 @@ public class SoloPlayActivity extends AppCompatActivity {
 
     }
 
-    public void UpdateCorrect(){
+    private void UpdateCorrect(){
         correct++;
         correctList.put(currentCardNum-1,true);
         correctTxt.setText(String.valueOf(correct)+"/"+loadedDeck.getSize()+" Correct");
 
+        boolean wasFinished = false;
         if (correct == loadedDeck.getSize() && !wasFinished){
             FCApplication.incrementGamesWon();
         }
     }
 
-    public void UpdateCardStatus(){
+    private void UpdateCardStatus(){
         numOfCards.setText(currentCardNum+"/"+loadedDeck.getSize());
 
         if (correctList.get(currentCardNum-1)){
@@ -168,7 +167,7 @@ public class SoloPlayActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    public void SetFrontTextTouch(){
+    private void SetFrontTextTouch(){
         final Context context = this;
         frontText.setOnTouchListener(new OnSwipeTouchListener(context) {
             @Override
@@ -250,12 +249,12 @@ public class SoloPlayActivity extends AppCompatActivity {
         params.width = ViewGroup.LayoutParams.MATCH_PARENT;
     }
 
-    public void Unblur(){
+    private void Unblur(){
         backText.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         backText.getPaint().setMaskFilter(null);
     }
 
-    public void ForceBlur(){
+    private void ForceBlur(){
         float radius = backText.getTextSize()/2;
         backText.setLayerType(View.LAYER_TYPE_SOFTWARE,null);
         BlurMaskFilter mask = new BlurMaskFilter(radius, BlurMaskFilter.Blur.NORMAL);
@@ -263,7 +262,7 @@ public class SoloPlayActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    public void SetBackTextTouch(){
+    private void SetBackTextTouch(){
         final Context context = this;
 
         backText.setOnTouchListener(new OnSwipeTouchListener(context) {
@@ -343,7 +342,7 @@ public class SoloPlayActivity extends AppCompatActivity {
         backText.setText(loadedDeck.getCard(currentCardNum-1).getBack());
     }
 
-    public void SetCardNumTouch(){
+    private void SetCardNumTouch(){
         final RecyclerView.Adapter recycleAdapter = new CardAdapter(loadedDeck.GetCards());
         final Context c = this;
 
@@ -367,7 +366,7 @@ public class SoloPlayActivity extends AppCompatActivity {
         });
     }
 
-    public void doCardAnimations(final float start, final float end){
+    private void doCardAnimations(final float start, final float end){
         ObjectAnimator moveFront = ObjectAnimator.ofFloat(frontText,"translationX",start,end);
         moveFront.setDuration(100);
         moveFront.start();

@@ -16,4 +16,20 @@
         <item name="android:background">@color/colorPrimary</item>
 
     </style>
+
+    <style name="PlaySolo_ButtonStyle">
+
+        <item name="android:textColor">#ffff</item>
+
+        <item name="android:textSize">25dp</item>
+
+        <item name="android:layout_width">120dp</item>
+
+        <item name="android:layout_height">50dp</item>
+
+        <item name="android:fontFamily">sans-serif-smallcaps</item>
+
+        <item name="android:background">@null</item>
+
+    </style>
 </resources>

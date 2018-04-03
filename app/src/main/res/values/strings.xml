@@ -2,23 +2,69 @@
     <string name="app_name">Flash Cards</string>
 
     <!-- Strings related to login -->
-    <string name="app_title">Flash\n Cards</string>
+    <string name="app_desc">An app that keeps you guessing</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="action_register">Register</string>
     <string name="action_displayname">Display Name</string>
     <string name="action_create_new_account">Create Account</string>
-    <string name="action_bac">Create Account</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
     <string name ="action_login_offline">Login Offline</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name ="offline_txt">Login to access online features!</string>
+
+
+    <!-- Main Menu -->
+
+    <string name="menu">Menu</string>
+    <string name="menu_singleplayer">Singleplayer</string>
+    <string name="menu_singleplayerdesc">Bring a deck into solo play</string>
+    <string name="menu_deckedit">Player Deck</string>
+    <string name="menu_deckeditdesc">Edit, create or share decks</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_profiledesc">View your personalized stats</string>
+    <string name="menu_community">Community Decks</string>
+    <string name="menu_communitydesc">Download decks from the community</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_logoutdesc">Exit to the login screen</string>
+
+    <!-- Deck Stuff -->
+
+    <string name="deck_deck_create">Create Deck</string>
+    <string name="deck_deck_select">Select a Deck!</string>
+    <string name="deck_deck_desc">Create a deck to bring into Solo Play!</string>
+
+    <!-- Profile -->
+
+    <string name="profile_username">Username</string>
+
+    <string name="profile_deck_amount">Amount of Decks</string>
+    <string name="profile_card_amount">Amount of Cards</string>
+    <string name="profile_games_won">Games Won</string>
+    <string name="profile_games_played">Games Played</string>
+
+    <!-- Other -->
+
+    <string name="card_front">Front Text</string>
+    <string name="card_back">Back Text</string>
+
+    <string name="deck_name">Deck Name</string>
+    <string name="deck_desc">Deck Description</string>
+
+    <string name="deck_create">Deck Creation</string>
+    <string name="card_create">Card Creation</string>
+    <string name="edit_card">Edit Card</string>
+
+    <string name="card_question">Question</string>
+    <string name="card_answer">Answer</string>
+    <string name="card_answer2">Card Answer</string>
+
+    <string name="decks">Decks</string>
+    <string name="cards">Cards</string>
+
+    <string name="card_jump">Jump To</string>
+
+
+
 
 
     <item name="visible" type="id" />

@@ -19,8 +19,8 @@ import java.io.IOException;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    ImageView profilePicIV;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
+    private ImageView profilePicIV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,24 +34,37 @@ public class ProfileActivity extends AppCompatActivity {
 
         TextView userNameTV, gamesPlayedTV, gamesWonTV, numDecksTV, numCardsTV;
 
+        TextView gamesplayedView, gamesWonView, numCards,numDecks;
+
         userNameTV = findViewById(R.id.username_text_view);
         gamesPlayedTV = findViewById(R.id.games_played_text_view);
         gamesWonTV = findViewById(R.id.games_won_text_view);
         numDecksTV = findViewById(R.id.num_decks_text_view);
         numCardsTV = findViewById(R.id.num_cards_text_view);
 
+        gamesplayedView = findViewById(R.id.games_played);
+        gamesWonView = findViewById(R.id.games_won);
+        numCards = findViewById(R.id.card_amount);
+        numDecks = findViewById(R.id.deck_amount);
+
         userNameTV.setText(User.LoggedIn.GetName());
-        gamesPlayedTV.setText("Games Played - " + FCApplication.getGamesPlayed());
+        gamesPlayedTV.setText(this.getString(R.string.profile_games_played));
+        gamesplayedView.setText(String.valueOf(FCApplication.getGamesPlayed()));
 
-        gamesWonTV.setText("Games Won - " + FCApplication.getGamesWon());
+        gamesWonTV.setText(this.getString(R.string.profile_games_won));
+        gamesWonView.setText(String.valueOf(FCApplication.getGamesWon()));
 
-        numDecksTV.setText("Decks - " + FCApplication.getNumDecks());
-        numCardsTV.setText("Cards - " + FCApplication.getNumCards());
+        numDecksTV.setText(this.getString(R.string.decks));
+        numDecks.setText(String.valueOf(FCApplication.getNumDecks()));
+
+        numCardsTV.setText(this.getString(R.string.cards));
+        numCards.setText(String.valueOf(FCApplication.getNumCards()));
     }
 
     public void onMenuClicked(View v){
         Intent menu = new Intent(getApplicationContext(), MenuActivity.class);
         startActivity(menu);
+        finish();
     }
 
     //Takes a photo with an outside app, should check if user has camera and give option to load
@@ -83,13 +96,11 @@ public class ProfileActivity extends AppCompatActivity {
     //Saves the given Bitmap as <username>Icon.png in the application private folder
     private void saveProfilePicture(Bitmap bmp){
         FileOutputStream out = null;
-        String username = "Offline User";
-        username = User.LoggedIn.GetName();
-        deleteFile(username + "Icon.png");
+        deleteFile(User.LoggedIn.GetServerID() + "Icon.png");
 
         try {
             // out = new FileOutputStream("filename");
-            out = openFileOutput(username + "Icon.png", Context.MODE_PRIVATE);
+            out = openFileOutput(User.LoggedIn.GetServerID() + "Icon.png", Context.MODE_PRIVATE);
             bmp.compress(Bitmap.CompressFormat.PNG, 100, out); // bmp is your Bitmap instance
             // PNG is a lossless format, the compression factor (100) is ignored
         } catch (Exception e) {
@@ -107,13 +118,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     //loads the bitmap named <username>Icon.png into the correct image view if the file exists
     private void loadProfilePicture(){
-        String username = "Offlin User";
-        username = User.LoggedIn.GetName();
-        String filename = getFilesDir().toString() + "/" + username + "Icon.png";
-
-        Bitmap bmp = BitmapFactory.decodeFile(filename);
-        if(bmp != null) {
-            profilePicIV.setImageBitmap(bmp);
+        String filepath = User.LoggedIn.GetServerID() + "Icon.png";
+        if (this.getFileStreamPath(filepath).exists()){
+            Bitmap bmp = BitmapFactory.decodeFile(filepath);
+            if(bmp != null) {
+                profilePicIV.setImageBitmap(bmp);
+            }
         }
     }
 }

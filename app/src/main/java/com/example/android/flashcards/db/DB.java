@@ -8,14 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Kevin on 2/14/2018.
  */
 
-public class DB extends SQLiteOpenHelper {
+class DB extends SQLiteOpenHelper {
 
     private final static String db_name = "flashcards.db";
     private final static int db_ver = 1;
 
-    public static SQLiteDatabase obj;
+    static SQLiteDatabase obj;
 
-    public DB(Context context ) {
+    DB(Context context) {
         super(context, db_name, null, db_ver);
     }
 

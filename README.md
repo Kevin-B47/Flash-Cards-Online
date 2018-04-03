@@ -11,3 +11,6 @@ No email auth is required. Feel free to sign up with emails like hello@hello.com
 Minimum API level is 15
 
 [Flash Cards Backend](https://github.com/Kevin-B47/Flash-Card-Online-Backend)
+
+[Google Play Store Link](https://play.google.com/store/apps/details?id=com.solid_block.flashcards.online_flash)
+

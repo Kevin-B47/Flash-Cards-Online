@@ -6,17 +6,18 @@ android {
         applicationId 'com.solid_block.flashcards'
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionName '2'
+        versionCode 2
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        versionNameSuffix '1.01'
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            applicationIdSuffix 'online_flash'
-            versionNameSuffix '1.0'
+            applicationIdSuffix '.online_flash'
+            versionNameSuffix '1'
             zipAlignEnabled true
         }
         debug {
